@@ -41,3 +41,5 @@ const resultado = document.querySelector("#resultado");
 var cartasEscogidas = [];
 var cartasEscogidasId = [];
 var cartasGanadas = [];
+
+});
