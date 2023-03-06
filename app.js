@@ -43,3 +43,14 @@ var cartasEscogidasId = [];
 var cartasGanadas = [];
 
 });
+//-----------------lecture_03--------------//
+
+funtion creartablero() {
+  for(let i=0; i<cardAdj.length;i++) {
+    var carta= document.createElement("img");
+    carta.setAttribute("src","images/reverso.png");
+    carta.setAttribute("data-id", i);
+    carta.addEventListener("click", voltearCarta);
+    cuadricula.appendChild(carta);
+  }
+}
