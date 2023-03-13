@@ -1,29 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cardAdj = [
     {
-      name: "a",
-      img: "images/a.png"
+      name: "a[1]",
+      img: "images/a[1].png"
     },
     {
-      name: "b",
-      img: "images/b.png"
+      name: "b[1]",
+      img: "images/b[1].jpg"
     },
     {
-      name: "c",
-      img: "images/c.png"
+      name: "c[1]",
+      img: "images/c[1].png"
     },
 
     {
-      name: "d",
-      img: "images/d.png"
+      name: "d[1]",
+      img: "images/d[1].png"
     },
     {
-      name: "e",
-      img: "images/e.png"
+      name: "e[1]",
+      img: "images/e[1].png"
     },
     {
-      name: "f",
-      img: "images/f.png"
+      name: "f[1]",
+      img: "images/f[1].jpg"
+    },
+    {
+      name: "a[1]",
+      img: "images/a[1].png"
+    },
+    {
+      name: "b[1]",
+      img: "images/b[1].jpg"
+    },
+    {
+      name: "c[1]",
+      img: "images/c[1].png"
+    },
+
+    {
+      name: "d[1]",
+      img: "images/d[1].png"
+    },
+    {
+      name: "e[1]",
+      img: "images/e[1].png"
+    },
+    {
+      name: "f[1]",
+      img: "images/f[1].jpg"
     }
   ];
 
@@ -53,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cartasEscogidasId.push(cardId);
     this.setAttribute("src", cardAdj[cardId].img);
     if (cartasEscogidas.length === 2) {
-      setTimeout(verificarPareja, 1000);
+      setTimeout(VerificarPareja, 1000);
     }
   }
   creartablero();
