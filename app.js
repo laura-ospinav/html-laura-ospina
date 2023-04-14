@@ -69,8 +69,39 @@ document.addEventListener("DOMContentLoaded", () => {
       cuadricula.appendChild(carta);
     }
   }
+//-----------------------lecture_04------------------------//
+function verificarpareja(){
+  var cards = document.querySelectorAll("img");
+  const opcionUnoId = cartasEscogidasId[0];
+  const opcionDosId = cartasEscogidasId[1];
 
-  //---------------------lecture 04---------------//
+if (opcionUnoId === opcionDosId) {
+  cards[opcionUnoId].setAttribute("src","images/reverso.png");
+  cards[opcionDosId].setAttribute("src","images/reverso.png");
+alert("¡Diste click a la misma imagen!");
+} else if (cartasEscogidas[0]=== cartasEscogidas[1]) {
+  alert("¡correcto!");
+  cards[opcionUnoId].setAttribute("src","images/blank.png");
+  cards[opcionDosId].setAttribute("src","images/blank.png");
+  cards[opcionUnoId].removeEventListener("click",voltearCarta);
+  cards[opcionDosId].removeEventListener("click",voltearCarta);
+  cartasGanadas.push(cartasEscogidas);
+} else {
+  cards[opcionUnoId].setAttribute("src","images/reverso.png");
+  cards[opcionDosId].setAttribute("src","images/reverso.png");
+alert("¡intenta de nuevo!");
+}
+cartasEscogidas = [];
+cartasEscogidasId = [];
+
+resultado.textContent = cartasGanadas.length;
+
+if(cartasGanadas.length === cardAdj.length / 2){
+  resultado.textContent = "¡Felicidades, econcontraste todos los pares!";
+  }
+}
+
+  //---------------------lecture 05---------------//
 
   function voltearCarta() {
     var cardId = this.getAttribute("data-id");
@@ -78,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cartasEscogidasId.push(cardId);
     this.setAttribute("src", cardAdj[cardId].img);
     if (cartasEscogidas.length === 2) {
-      setTimeout(VerificarPareja, 1000);
+      setTimeout(verificarpareja, 1000);
     }
   }
   creartablero();
